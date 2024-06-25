@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Gradient Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Enhanced Gradient Builder</h1>
+        </header>
+        <main class="gradient-builder">
+            <section class="control-panel">
+                <div class="input-group">
+                    <label for="width">Width</label>
+                    <div class="input-with-unit">
+                        <input type="number" id="width" value="300" min="1" max="7680">
+                        <span class="unit">px</span>
+                    </div>
+		    <label for="noiseFactor">Noise Factor</label>
+    		    <input type="number" id="noiseFactor" value="0.1" min="0" max="1" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <div class="input-with-unit">
+                        <input type="number" id="height" value="150" min="1" max="7680">
+                        <span class="unit">px</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="direction">Direction</label>
+                    <select id="direction">
+                        <option value="horizontal">Horizontal</option>
+                        <option value="vertical">Vertical</option>
+                        <option value="diagonal">Diagonal</option>
+			<option value="radial">Radial</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="numGradients">Number of Gradients</label>
+                    <input type="number" id="numGradients" value="1" min="1" max="10">
+                </div>
+                <div class="input-group">
+                    <label for="noiseMin">Noise Min</label>
+                    <input type="number" id="noiseMin" value="0.05" min="0" max="1" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="noiseMax">Noise Max</label>
+                    <input type="number" id="noiseMax" value="0.2" min="0" max="1" step="0.01">
+                </div>
+            </section>
+            <section class="color-section">
+                <h2>Colors</h2>
+                <div id="colorInputs" class="color-inputs"></div>
+                <button id="addColor" class="add-color-btn">Add Color</button>
+            </section>
+            <section class="preview-section">
+                <h2>Preview</h2>
+                <div id="gradientPreview" class="gradient-preview"></div>
+                <div id="dimensionsDisplay" class="dimensions-display"></div>
+            </section>
+            <button id="generateBtn" class="generate-btn">Generate Gradients</button>
+        </main>
+        <div id="alert" class="alert" role="alert"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
